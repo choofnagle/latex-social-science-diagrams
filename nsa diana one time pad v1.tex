@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage[margin=2cm]{geometry}
+
+%\documentclass[border=2mm]{standalone}
+% \usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{tikz,graphicx}
+\usepackage{hyperref}
+\usetikzlibrary{positioning,matrix,calc}
+
+\usepackage{pgfmath}
+\pgfmathsetseed{\number\pdfrandomseed}
+
+
+
+
+
+
+
+
+\begin{document}
+\thispagestyle{empty}
+% \begin{center}
+
+\section*{The NSA DIANA Cipher}
+
+\tikz{
+% Define style
+\tikzstyle{block}=[draw,outer sep=0pt, inner sep=0pt, minimum width=12cm, minimum height=2cm, align=center]
+
+\newcommand*{\mybox}[2][5cm]{%
+  % \framebox
+  \makebox[#1][s]{#2}}
+
+
+\newcommand{\alphabets}[4]{
+\foreach \i[count=\j,evaluate=\j as \k using \j/2.8] in{#1}{
+\node (#30\j) at (\k,0-0.8*#4) {\footnotesize \i};}
+\foreach \i[count=\j,evaluate=\j as \k using \j/2.8] in{#2}{
+\node (#31\j) at (\k,-.35-.8*#4) {\footnotesize \i};}
+\node[] at ([xshift=-.6cm]$(#301)!.5!(#311)$) {\footnotesize #3};
+}
+
+\alphabets{A,B,...,Z}{Z,Y,...,A}{A}{1}
+\alphabets{A,B,...,Z}{Y,X,...,A,Z}{B}{2}
+\alphabets{A,B,...,Z}{X,W,...,A,Z,Y}{C}{3}
+\alphabets{A,B,...,Z}{W,V,...,A,Z,Y,X}{D}{4}
+\alphabets{A,B,...,Z}{V,U,...,A,Z,Y,...,W}{E}{5}
+\alphabets{A,B,...,Z}{U,T,...,A,Z,Y,...,V}{F}{6}
+\alphabets{A,B,...,Z}{T,S,...,A,Z,Y,...,U}{G}{7}
+\alphabets{A,B,...,Z}{S,R,...,A,Z,Y,...,T}{H}{8}
+\alphabets{A,B,...,Z}{R,Q,...,A,Z,Y,...,S}{I}{9}
+\alphabets{A,B,...,Z}{Q,P,...,A,Z,Y,...,R}{J}{10}
+\alphabets{A,B,...,Z}{P,O,...,A,Z,Y,...,Q}{K}{11}
+\alphabets{A,B,...,Z}{O,N,...,A,Z,Y,...,P}{L}{12}
+\alphabets{A,B,...,Z}{N,M,...,A,Z,Y,...,O}{M}{13}
+\alphabets{A,B,...,Z}{M,L,...,A,Z,Y,...,N}{N}{14}
+\alphabets{A,B,...,Z}{L,K,...,A,Z,Y,...,M}{O}{15}
+\alphabets{A,B,...,Z}{K,J,...,A,Z,Y,...,L}{P}{16}
+\alphabets{A,B,...,Z}{J,I,...,A,Z,Y,...,K}{Q}{17}
+\alphabets{A,B,...,Z}{I,H,...,A,Z,Y,...,J}{R}{18}
+\alphabets{A,B,...,Z}{H,G,...,A,Z,Y,...,I}{S}{19}
+
+\alphabets{A,B,...,Z}{G,F,...,A,Z,Y,...,H}{T}{20}
+\alphabets{A,B,...,Z}{F,E,...,A,Z,Y,...,G}{U}{21}
+\alphabets{A,B,...,Z}{E,D,...,A,Z,Y,...,F}{V}{22}
+\alphabets{A,B,...,Z}{D,C,...,A,Z,Y,...,E}{W}{23}
+\alphabets{A,B,...,Z}{C,B,...,A,Z,Y,...,D}{X}{24}
+\alphabets{A,B,...,Z}{B,A,...,A,Z,Y,...,C}{Y}{25}
+\alphabets{A,B,...,Z}{A,Z,Y,...,B}{Z}{26}
+
+
+%
+\input random
+\newcount\code
+\def\ranx{\setrannum\code{`A}{`Z}\char\code}
+
+\foreach \i in {-1.5,-3,...,-8}{
+\foreach \j in {-21,-19.95,...,-1.2}{
+\node[] at (\i,\j) {\ttfamily\scriptsize \ranx$\:$\ranx$\:$\ranx$\:$\ranx$\:$\ranx} ;
+}
+}
+
+% Lines
+\foreach \i in {A,B,...,Z}{
+\draw ([xshift=-.7cm]\i01.north west)--(\i026.north east);}
+
+\draw (A026.north east)--(Z126.south east);
+\draw ([xshift=-.7cm]A01.north west)--([xshift=-.7cm]Z11.south west);
+\draw ([xshift=-.7cm]Z11.south west)--(Z126.south east);
+
+\draw[dashed] ([xshift=-1cm,yshift=-2mm]A01.west)--+(-7.3,0);
+}    
+% \end{center}
+
+\clearpage 
+
+This is reproduced from Hoofnagle \& Garfinkel, Law and Policy for the Quantum Age (Cambridge University Press 2022) and converted to \LaTeX by \href{https://www.fiverr.com/khalil_77}{Khalil Mokhtari}.
+
+This table from the NSA’s DIANA program illustrates how one-time pads produce messages with keys the same length of ciphertext. The key is on the left- hand side. The right-hand side is the table used to convert plain text to ciphertext (and vice versa). 
+
+In this version, the key auto-generates random characters with each build. But suppose that the key starts with the letter ``L.'' The user encrypting a message would use the L row on the table to choose the first letter of ciphertext. Assume that Alice wants to say “The Magic Words Are Squeamish Ossifrage” to Bob. To encrypt, Alice notes the first letter from the key, left-hand pane, which is L. Turning to the table, row L, and then to the letter T, the corresponding ciphertext underneath the T is a V. To encrypt the next letter, Alice would then select the next letter from the key, and so on. Alice and Bob must have identical cards and must destroy them after the process.
+
+Khalil Mokhtari serves as a research member and associate professor at the University of Khenchela, Algeria. He obtained his Ph.D. through the PROFAS B+ program, conducting research at the Laboratory of Systems Engineering of Versailles (LISV), University of Versailles UVSQ, France. His expertise lies in Applied Mathematics and Control Systems Engineering, with a focus on adaptive control, passivity, and positivity characterizations of control systems.}
+
+
+\end{document}
+
