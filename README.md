@@ -3,5 +3,8 @@ Are you a social scientist who wants to write in LaTeX? This repository has figu
 
 ## The NSA DIANA Cipher v1 (by Khalil)
 
-![dianav1](https://github.com/choofnagle/latex-social-science-diagrams/assets/2270957/3b635473-cadc-4f76-a583-54db6a2d0e62)
+![Diana v1](dianav1.png)
 
+## John Boyd's OODA Loop (by Khalil)
+
+![Boyd's OODA Loop v1](boydoodav1.png) 
