@@ -1,0 +1,74 @@
+\documentclass{standalone}
+\usepackage{tikz,graphicx}
+\usetikzlibrary{positioning,matrix,calc,shapes,arrows}
+
+
+\begin{document}
+\thispagestyle{empty}
+% \begin{center}
+\tikz{
+
+% Color definition
+\def\mblue{blue!70!cyan!30}
+% Define style
+\tikzstyle{rndsqr}=[draw=black!70,outer sep=0pt, inner sep=0pt, align=center,rounded corners=3.5mm,fill=white]
+
+\begin{scope}[transform shape,scale=.9]
+% Blue square
+\node[draw=\mblue!gray, minimum size=5cm, fill=\mblue,opacity=.7] (r) {};
+
+% Circles
+\node[draw=gray, circle, minimum size=4.8cm, fill=white] (c) at (r) {};
+\node[draw=\mblue!gray, circle, minimum size=3.3cm] (hc) at (r) {};
+
+% Ellipses inside the circle
+\node[rndsqr,minimum width=1.35cm,minimum height=.8cm, font=\tiny] (rsq1) at (hc.north) {Cultural\\traditions};
+\node[rndsqr,minimum width=1.35cm,minimum height=.8cm, font=\tiny] (rsq2) at (hc.165) {Genetic\\heritage};
+\node[rndsqr,minimum width=1.35cm,minimum height=.8cm, font=\tiny] (rsq3) at (hc.15) {Analysis \&\\synthesis};
+\node[rndsqr,minimum width=1.35cm,minimum height=.8cm, font=\tiny] (rsq4) at (hc.-50) {Previous\\experience};
+\node[rndsqr,minimum width=1.35cm,minimum height=.8cm, font=\tiny] (rsq5) at (hc.230) {New\\information};
+
+% Star
+\draw[\mblue!gray] (rsq1.-90)--(rsq4.130) (rsq1.-90)--(rsq5.50);
+\draw[\mblue!gray] (rsq2.0)--(rsq3.180) (rsq2.0)--(rsq4.130);
+\draw[\mblue!gray] (rsq5.50)--(rsq3.180);
+\end{scope}
+
+% ---
+\node[rndsqr,minimum width=2.2cm,minimum height=1.5cm, font=\small, rounded corners=7mm ,left=2cm of r] (obs) {Observations};
+
+\node[draw,minimum size=1.5cm, font=\small,align=center,right=6cm of r] (act)  {Action\\(test)};
+
+\node[minimum width=2.5cm, minimum height=1.5cm] (dec) at ($(r.east)!.5!(act.west)$)  {};
+\node[align=center,font=\footnotesize] at (dec) {Decision\\hypothesis};
+\draw (dec.west)--(dec.north)--(dec.east)--(dec.south)--cycle;
+
+
+% Arrows
+\draw[-triangle 45, \mblue!gray] (obs)--node[above]{\footnotesize Feed} node[below]{\footnotesize forward} (r);
+\draw[-triangle 45, \mblue!gray] (r)--node[above]{\footnotesize Feed} node[below]{\footnotesize forward} (dec);
+\draw[-triangle 45, \mblue!gray] (dec)--node[above]{\footnotesize Feed} node[below]{\footnotesize forward} (act);
+
+\draw[-triangle 45, \mblue!gray] (dec.south)|- node[fill=white,pos=.76] {Feedback} +(-10,-2)-|(obs.-60);
+\draw[-triangle 45, \mblue!gray] (act.-125)|- node[fill=white,pos=.921] {Feedback} +(-10,-2.5)-|(obs.-90);
+\draw[-triangle 45, \mblue!gray] (act.-55)|- node[pos=.2,align=center,font=\footnotesize,fill=white]{Unfolding\\interaction\\with\\ environment} node[below,pos=.6] {John Boyd's OODAloop} node[fill=white,pos=.974] {Feedback} +(-10,-3)-|(obs.-120);
+\draw[-triangle 45, \mblue!gray] (r.90) |- +(1,.3) -| node[pos=0.25,fill=white,font=\footnotesize]{Implicit guidance \& control} (act);
+\draw[-triangle 45, \mblue!gray] (r.100) |- +(-1,.3) -| node[pos=0.2,fill=white,font=\footnotesize]{Implicit guidance \& control} (obs);
+
+\draw[triangle 45-, \mblue!gray,shorten <=-2.9mm] (obs.north west)--++(-1,1)--node[pos=1,left,align=left]{Unfolding\\circumstances} +(-1,0);
+\draw[triangle 45-, \mblue!gray,shorten <=-2.9mm] (obs.south west)--++(-1,-1)--node[left,pos=.45,align=left]{Unfolding\\ interaction\\ with environment} +(-1,0);
+\draw[triangle 45-, \mblue!gray,shorten <=0mm] (obs.west)--node[pos=1.18,left,align=left]{Outside\\information} +(-2,0);
+
+\node[above=1cm] (ori) at (r.north) { \textbf{Orient}};
+\node[black!70] at (ori-|obs) {\textbf{Observe}};
+\node[black!70] at (ori-|dec) {\textbf{Decide}};
+\node[black!70] at (ori-|act) {\textbf{Act}};
+}    
+% \end{center}
+
+% This version of John Boyd's OODA Loop appeared in Hoofnagle & Richard's Cybersecurity in Context (Wiley 2024) and is adapted to Latex by Khalil Mokhtari. 
+
+%Mokhtari serves as a research member and associate professor at the University of Khenchela, Algeria. He obtained his Ph.D. through the PROFAS B+ program, conducting research at the Laboratory of Systems Engineering of Versailles (LISV), University of Versailles UVSQ, France. His expertise lies in Applied Mathematics and Control Systems Engineering, with a focus on adaptive control, passivity, and positivity characterizations of control systems.
+
+\end{document}
+
