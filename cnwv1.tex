@@ -1,0 +1,113 @@
+\documentclass[border=10mm]{standalone}
+% \usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{tikz,graphicx,fontawesome5}
+\usetikzlibrary{positioning,matrix,calc,shapes,arrows,decorations.pathreplacing}
+
+\usepackage{textcomp}
+
+
+
+
+
+
+
+
+\begin{document}
+\thispagestyle{empty}
+% \begin{center}
+
+
+\tikz{
+% Define style
+\tikzstyle{block}=[draw,outer sep=0pt, inner sep=0pt, minimum size=2cm, align=center,fill=white]
+
+% Squares
+\node[block] (r1) {Processor};
+\node[block, right=6cm of r1] (r2) {Switching\\Center};
+
+% Rectangle
+\node[draw, minimum width=6cm,minimum height=1.2cm,align=center] (r3) at ([yshift=2mm]$(r1)!.5!(r2)$) {Communication\\Lines};
+
+% Circles
+\draw (r1.145)-- node[pos=1,left,draw, circle,minimum size=.3cm]{} node[pos=1.1,left,draw, circle,minimum size=.3cm]{} coordinate[pos=1](c1) +(-2,0);
+\draw (r1.167)-- node[pos=1,left,draw, circle,minimum size=.3cm]{} node[pos=1.1,left,draw, circle,minimum size=.3cm]{} coordinate[pos=1](c2) +(-2,0);
+\draw (r1.-145)-- node[pos=1,left,draw, circle,minimum size=.3cm]{} node[pos=1.1,left,draw, circle,minimum size=.3cm]{} coordinate[pos=1](c3) +(-2,0);
+
+\node[] at ([xshift=1cm]$(c2)!.5!(c3)$) {\large\strut$\vdots$}; % Vertical dots
+
+% Lines
+\draw (r1.27)--coordinate[pos=.7](a) +(1,0);
+\draw (r1.13)--coordinate[pos=.7](b) +(1,0);
+\path (r1.-22)--coordinate[pos=.7](c) +(1,0);
+\node[] at ($(b)!.5!(c)$) {\large\strut$\vdots$}; % Vertical dots
+
+\draw (r2.180-27)--coordinate[pos=.7](a) +(-1,0);
+\draw (r2.180-13)--coordinate[pos=.55](b) +(-1,0);
+\draw (r2.182)--coordinate[pos=.7](c) +(-1,0);
+
+\node[draw, ellipse,minimum width=.5cm,minimum height=1.5cm] (ell1) at(b) {}; % Ellipse
+
+\draw (r2.39)--coordinate[pos=.2](aa) coordinate[pos=.4](bb) coordinate[pos=.75](cc) node[pos=.6,sloped,fill=white,inner sep=-.6ex]{//} node[pos=1,right,scale=1.3,black!70](radi1){\faLaptop} node[pos=1,right=.8cm,scale=1.3,black!70](mal1) {\faUser} +(30:4);
+\draw (r2.-39)--node[pos=.6,sloped,fill=white,inner sep=-.6ex]{//} node[pos=1,right,scale=1.3,black!70](radi2){\faLaptop} node[pos=1,right=.8cm,scale=1.3,black!70](mal2) {\faUser} +(-30:4);
+\draw (r2.27)--coordinate[pos=.8](a) +(22:2);
+\draw (r2.13)--coordinate[pos=.8](b) +(14:2);
+
+\node[yshift=-9mm] at (b) {\large\strut$\vdots$}; % Vertical dots
+\node[draw, ellipse,minimum width=.5cm,minimum height=2.2cm,xshift=.4cm] (ell2) at(r2.east) {}; % Ellipse
+
+\node[yshift=-12mm] at (radi1) {\large\strut$\vdots$}; % Vertical dots
+\node[yshift=-12mm] at (mal1) {\large\strut$\vdots$}; % Vertical dots
+\node[yshift=12mm] at (radi2) {\large\strut$\vdots$}; % Vertical dots
+\node[yshift=12mm] at (mal2) {\large\strut$\vdots$}; % Vertical dots
+\node[] at ($(mal2)!.5!(mal1)$) {\large\strut$\vdots$}; % Vertical dots
+\node[] at ($(radi2)!.5!(radi1)$) {\large\strut$\vdots$}; % Vertical dots
+
+\node[below=2mm,scale=1.3,black!70](mal3) at (r3.-165) {\faUser};
+\node[below=2mm,scale=1.3,black!70](mal4) at (r3.-90) {\faUser};
+\node[below=2mm,scale=1.3,black!70](mal5) at (r3.-15) {\faUser};
+
+% Brace
+\draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=5ex}]
+  ($(c1)+(0,3mm)$) -- coordinate[midway](br) ($(c3)+(0,-3mm)$);
+  
+% Arrows and labels
+\draw[-triangle 45] (r1.north)--node[pos=1,above]{\small Radiation} +(0,1);
+\draw[-triangle 45] (r3.160)--node[pos=1,above]{\small Radiation} +(0,1);
+\draw[triangle 45-] (r3.north)--node[pos=1,above]{\small Taps} +(0,1);
+\draw[triangle 45-] (ell1.north)--node[pos=1,above]{\small Crosstalk} +(0,1);
+\draw[-triangle 45] (r2.north)--node[pos=1,above]{\small Radiation} +(0,1.3);
+\draw[triangle 45-] (ell2.north)--node[pos=1,above]{\small Crosstalk} +(0,.7);
+\draw[-triangle 45] (bb)--node[pos=1,above]{\small Radiation} +(0,1);
+\draw[triangle 45-] (cc)--node[pos=1,above]{\small Taps} +(0,.7);
+\draw[-triangle 45] (radi1.north)--node[pos=1,above]{\small Radiation} +(0,.5);
+
+\draw[triangle 45-] ($(br)+(-1,0)$) -| node[pos=1,below,align=left,font=\footnotesize,xshift=3.5mm]{\small\textbf{Files}\\Theft \\Copying\\unauthorized access} +(-.5,-2);
+
+\draw[triangle 45-] (r1.-120) |- node[pos=1,left,align=left,font=\footnotesize]{\small\textbf{Hardware}\\Failure of protection circuits\\ contribute to software failures} +(-.5,-3.3);
+
+\draw[triangle 45-] (r1.-60) |- node[pos=1,left,align=left,font=\footnotesize]{\small\textbf{Software}\\Failure of protection features \\ access control\\bounds control. etc.} +(-2.65,-5);
+
+\draw[triangle 45-] (mal3.south) |- node[pos=1,right,align=left,font=\footnotesize]{\small\textbf{Operator}\\Replace supervisor\\ reveal protective measures} +(.3,-4.8);
+
+\draw[triangle 45-] (mal4.south) -- node[pos=1,below,align=left,font=\footnotesize,xshift=1mm]{\small\textbf{Maintenance man}\\Disable hardware  devices \\ use stand-alone utility programs} +(0,-.6);
+
+\draw[triangle 45-] (mal5.south) |- node[pos=1,left,align=left,font=\footnotesize]{\small\textbf{System programmer}\\Disable protective features\\ provide "ins" \\ 
+reveal protective measures} +(-.5,-3.2);
+
+\draw[triangle 45-] (r2.south) |- node[pos=1,right,align=left,font=\footnotesize]{\small\textbf{Hardware}\\Improper connections\\cross coupling} +(.5,-2);
+
+\draw[triangle 45-] (mal2.south) |- node[pos=1,left,align=left,font=\footnotesize]{\small\textbf{User}\\Identification \\ authentication\\ subtle software \\ modifications} +(-1.1,-3);
+
+\draw[triangle 45-] (radi2.south) |- node[pos=1,left,align=left,font=\footnotesize]{\small\textbf{Access}\\Attachment of recorders \\ bugs} +(-2.29,-1.5);
+
+\node[above=2.8cm] at (r3.north) {\large\textbf{Computer Network Vulnerabilities}};
+   
+
+% \end{center}
+
+%In 1970, in a now declassified document, Willis Ware and colleagues reported to the Department of Defense about the multifarious challenges to computer security. Fifty years later, the “threat points” identified by Ware continue to exist in modern computer systems.Ware W. Security Controls for Computer Systems. Rand Corporation for the Office of the Director of Defense Research and Engineering, 1970
+
+%This is adapted from Hoofnagle & Richard, Cybersecurity in Context (Wiley 2024) by Khalil Mokhtari. Mokhtari serves as a research member and associate professor at the University of Khenchela, Algeria. He obtained his Ph.D. through the PROFAS B+ program, conducting research at the Laboratory of Systems Engineering of Versailles (LISV), University of Versailles UVSQ, France. His expertise lies in Applied Mathematics and Control Systems Engineering, with a focus on adaptive control, passivity, and positivity characterizations of control systems.
+
+\end{document}
+
