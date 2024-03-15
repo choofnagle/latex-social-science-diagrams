@@ -19,6 +19,12 @@ In 1970, in a now declassified document, Willis Ware and colleagues reported to 
 
 ![Computer Network Vulnerabilities v1](cnvv1.png)
 
+## BB84 Illustrated (by Malik)
+
+We reproduced this figure from Aliberti and Bruen (2006), “Quantum Computation and Communication” Army Logistician 38.5, pp. 42–48, as it was the best illustration we could find of BB84 quantum key distribution.
+
+![BB84 Protocol](bb84.png) 
+
 ## TRO Process in Luxottica (by Khalil)
 
 This is a figure from Aniket Kesari, Chris Hoofnagle and Damon McCoy, Deterring Cybercrime in Berkeley Technology Law Journal Vol. 32, No. 3 (2017), pp. 1093-1134. 
