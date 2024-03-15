@@ -19,6 +19,10 @@ In 1970, in a now declassified document, Willis Ware and colleagues reported to 
 
 ![Computer Network Vulnerabilities v1](cnvv1.png)
 
+## Computer Network Vulnerabilities (by Malik)
+
+![Computer Network Vulnerabilities v1](cnvv2.png)
+
 ## BB84 Illustrated (by Malik)
 
 We reproduced this figure from Aliberti and Bruen (2006), “Quantum Computation and Communication” Army Logistician 38.5, pp. 42–48, as it was the best illustration we could find of BB84 quantum key distribution.
