@@ -1,0 +1,262 @@
+\documentclass[border=10mm]{standalone}
+
+ \usepackage{graphicx}
+\usepackage{bm}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\def\MarkRightAngle[size=#1](#2,#3,#4){
+  \draw[] ($(#3)!#1!(#2)$) -- ($($(#3)!#1!(#2)$)!#1!90:(#2)$) -- ($(#3)!#1!(#4)$)
+}
+
+\usetikzlibrary{patterns}
+\usetikzlibrary{angles,quotes}
+\usepackage{parskip}
+\usetikzlibrary{intersections, pgfplots.fillbetween}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{multirow} 
+
+
+\begin{document}  
+% Gradient Vertical bar
+  
+\tikzset {_bp8f79h4o/.code = {\pgfsetadditionalshadetransform{ \pgftransformshift{\pgfpoint{0 bp } { 0 bp }  }  \pgftransformrotate{-90 }  \pgftransformscale{2 }  }}}
+\pgfdeclarehorizontalshading{_llue6qmbt}{150bp}{rgb(0bp)=(0.61,0.61,0.61);
+rgb(37.5bp)=(0.61,0.61,0.61);
+rgb(62.5bp)=(0.61,0.61,0.61);
+rgb(100bp)=(0.61,0.61,0.61)}
+\tikzset{_hf8st80c6/.code = {\pgfsetadditionalshadetransform{\pgftransformshift{\pgfpoint{0 bp } { 0 bp }  }  \pgftransformrotate{-90 }  \pgftransformscale{2 } }}}
+\pgfdeclarehorizontalshading{_k6ctznp3p} {150bp} {color(0bp)=(transparent!95);
+color(37.5bp)=(transparent!95);
+color(62.5bp)=(transparent!30);
+color(100bp)=(transparent!30) } 
+\pgfdeclarefading{_7dp101oy5}{\tikz \fill[shading=_k6ctznp3p,_hf8st80c6] (0,0) rectangle (50bp,50bp); } 
+
+
+% Gradient cyclinder 
+  
+\tikzset {_8gpr4bzch/.code = {\pgfsetadditionalshadetransform{ \pgftransformshift{\pgfpoint{187.5 bp } { -167 bp }  }  \pgftransformscale{1 }  }}}
+\pgfdeclareradialshading{_hq6urdyis}{\pgfpoint{-200bp}{184bp}}{rgb(0bp)=(1,1,1);
+rgb(0bp)=(1,1,1);
+rgb(25bp)=(0.39,0.05,0.05);
+rgb(400bp)=(0.39,0.05,0.05)}
+
+% Gradient circle
+  
+\tikzset {_e86rb5m74/.code = {\pgfsetadditionalshadetransform{ \pgftransformshift{\pgfpoint{227.7 bp } { -227.7 bp }  }  \pgftransformscale{1.32 }  }}}
+\pgfdeclareradialshading{_gvnjwi6oa}{\pgfpoint{-184bp}{184bp}}{rgb(0bp)=(1,1,1);
+rgb(0bp)=(1,1,1);
+rgb(13.839285714285715bp)=(0.39,0.05,0.05);
+rgb(400bp)=(0.39,0.05,0.05)}
+
+
+% Gradient horizontal bar
+  
+\tikzset {_hvd5allw0/.code = {\pgfsetadditionalshadetransform{ \pgftransformshift{\pgfpoint{0 bp } { 0 bp }  }  \pgftransformrotate{0 }  \pgftransformscale{2 }  }}}
+\pgfdeclarehorizontalshading{_j5wwo2xxj}{150bp}{rgb(0bp)=(0.61,0.61,0.61);
+rgb(37.5bp)=(0.61,0.61,0.61);
+rgb(62.5bp)=(0.61,0.61,0.61);
+rgb(100bp)=(0.61,0.61,0.61)}
+\tikzset{_ot3sykaex/.code = {\pgfsetadditionalshadetransform{\pgftransformshift{\pgfpoint{0 bp } { 0 bp }  }  \pgftransformrotate{0 }  \pgftransformscale{2 } }}}
+\pgfdeclarehorizontalshading{_6y4okrx6e} {150bp} {color(0bp)=(transparent!95);
+color(37.5bp)=(transparent!95);
+color(62.5bp)=(transparent!30);
+color(100bp)=(transparent!30) } 
+\pgfdeclarefading{_wnfumyj78}{\tikz \fill[shading=_6y4okrx6e,_ot3sykaex] (0,0) rectangle (50bp,50bp); } 
+
+
+\tikzset{every picture/.style={line width=0.75pt}} % line width        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+
+%Shape: Rectangle vertical 1 
+\draw  [draw opacity=0][shading=_llue6qmbt,_bp8f79h4o,path fading= _7dp101oy5 ,fading transform={xshift=2}] (240.13,103.4) -- (282.2,103.4) -- (282.2,303.13) -- (240.13,303.13) -- cycle ;
+%Shape: Rectangle vertical 2
+\draw  [draw opacity=0][shading=_llue6qmbt,_bp8f79h4o,path fading= _7dp101oy5 ,fading transform={xshift=2}] (295.2,103.4) -- (337.27,103.4) -- (337.27,303.13) -- (295.2,303.13) -- cycle ;
+%Shape: Rectangle vertical 3 
+\draw  [draw opacity=0][shading=_llue6qmbt,_bp8f79h4o,path fading= _7dp101oy5 ,fading transform={xshift=2}] (349.27,103.4) -- (391.33,103.4) -- (391.33,303.13) -- (349.27,303.13) -- cycle ;
+%Shape: Rectangle vertical 4 
+\draw  [draw opacity=0][shading=_llue6qmbt,_bp8f79h4o,path fading= _7dp101oy5 ,fading transform={xshift=2}] (405.33,103.4) -- (447.4,103.4) -- (447.4,303.13) -- (405.33,303.13) -- cycle ;
+%Shape: Rectangle vertical 5 
+\draw  [draw opacity=0][shading=_llue6qmbt,_bp8f79h4o,path fading= _7dp101oy5 ,fading transform={xshift=2}] (460.4,103.4) -- (502.47,103.4) -- (502.47,303.13) -- (460.4,303.13) -- cycle ;
+%Shape: Rectangle vertical 6 
+\draw  [draw opacity=0][shading=_llue6qmbt,_bp8f79h4o,path fading= _7dp101oy5 ,fading transform={xshift=2}] (514.47,103.4) -- (556.53,103.4) -- (556.53,303.13) -- (514.47,303.13) -- cycle ;
+
+
+
+%Rounded Rectangle 1 
+\draw  [fill={rgb, 255:red, 74; green, 93; blue, 179 }  ,fill opacity=1 ] (161.13,117.3) .. controls (161.06,114.26) and (163.31,112.35) .. (166.17,113.02) -- (212.3,123.88) .. controls (215.16,124.56) and (217.54,127.56) .. (217.62,130.6) -- (219.34,199.28) .. controls (219.42,202.31) and (217.16,204.23) .. (214.31,203.56) -- (168.17,192.69) .. controls (165.32,192.02) and (162.94,189.01) .. (162.86,185.98) -- cycle ;
+%Rounded Rectangle 2 
+\draw  [fill={rgb, 255:red, 74; green, 93; blue, 179 }  ,fill opacity=1 ] (562.63,61.8) .. controls (562.56,58.76) and (564.81,56.85) .. (567.67,57.52) -- (613.8,68.38) .. controls (616.66,69.06) and (619.04,72.06) .. (619.12,75.1) -- (620.84,143.78) .. controls (620.92,146.81) and (618.66,148.73) .. (615.81,148.06) -- (569.67,137.19) .. controls (566.82,136.52) and (564.44,133.51) .. (564.36,130.48) -- cycle ;
+
+
+%inner Rounded Rect 1
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (163.03,132.44) .. controls (163.24,131.76) and (163.96,131.37) .. (164.65,131.58) -- (187.31,138.42) .. controls (187.99,138.63) and (188.38,139.35) .. (188.17,140.04) -- (188.17,140.04) .. controls (187.96,140.72) and (187.24,141.11) .. (186.56,140.9) -- (163.9,134.05) .. controls (163.21,133.85) and (162.83,133.13) .. (163.03,132.44) -- cycle ;
+%inner Rounded Rect 2
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (195.78,190.95) .. controls (195.22,190.5) and (195.12,189.69) .. (195.56,189.13) -- (210.18,170.51) .. controls (210.62,169.95) and (211.43,169.85) .. (211.99,170.29) -- (211.99,170.29) .. controls (212.56,170.73) and (212.65,171.55) .. (212.21,172.11) -- (197.59,190.73) .. controls (197.15,191.29) and (196.34,191.39) .. (195.78,190.95) -- cycle ;
+%inner Rounded Rect 3 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (185.78,187.72) .. controls (185.38,187.98) and (184.85,187.86) .. (184.59,187.46) -- (167.13,160.53) .. controls (166.87,160.13) and (166.98,159.6) .. (167.38,159.34) -- (167.38,159.34) .. controls (167.78,159.08) and (168.31,159.19) .. (168.57,159.59) -- (186.03,186.53) .. controls (186.29,186.93) and (186.18,187.46) .. (185.78,187.72) -- cycle ;
+%inner Rounded Rect 4 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (564.03,75.94) .. controls (564.24,75.26) and (564.96,74.87) .. (565.65,75.08) -- (588.31,81.92) .. controls (588.99,82.13) and (589.38,82.85) .. (589.17,83.54) -- (589.17,83.54) .. controls (588.96,84.22) and (588.24,84.61) .. (587.56,84.4) -- (564.9,77.55) .. controls (564.21,77.35) and (563.83,76.63) .. (564.03,75.94) -- cycle ;
+%inner Rounded Rect 5
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (596.78,135.45) .. controls (596.22,135) and (596.12,134.19) .. (596.56,133.63) -- (611.18,115.01) .. controls (611.62,114.45) and (612.43,114.35) .. (612.99,114.79) -- (612.99,114.79) .. controls (613.56,115.23) and (613.65,116.05) .. (613.21,116.61) -- (598.59,135.23) .. controls (598.15,135.79) and (597.34,135.89) .. (596.78,135.45) -- cycle ;
+%inner Rounded Rect 6
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (587.78,133.22) .. controls (587.38,133.48) and (586.85,133.36) .. (586.59,132.96) -- (569.13,106.03) .. controls (568.87,105.63) and (568.98,105.1) .. (569.38,104.84) -- (569.38,104.84) .. controls (569.78,104.58) and (570.31,104.69) .. (570.57,105.09) -- (588.03,132.03) .. controls (588.29,132.43) and (588.18,132.96) .. (587.78,133.22) -- cycle ;
+%inner Rounded Rect 7
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (606.12,102.94) .. controls (605.64,102.94) and (605.25,102.55) .. (605.25,102.08) -- (605.19,69.98) .. controls (605.19,69.5) and (605.57,69.12) .. (606.04,69.12) -- (606.04,69.12) .. controls (606.52,69.12) and (606.91,69.5) .. (606.91,69.98) -- (606.97,102.08) .. controls (606.98,102.55) and (606.59,102.94) .. (606.12,102.94) -- cycle ;
+%inner Rounded Rect 8
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (203.21,158.94) .. controls (202.74,158.94) and (202.35,158.55) .. (202.35,158.08) -- (202.28,125.98) .. controls (202.28,125.5) and (202.66,125.12) .. (203.14,125.12) -- (203.14,125.12) .. controls (203.61,125.12) and (204,125.5) .. (204,125.98) -- (204.07,158.08) .. controls (204.07,158.55) and (203.69,158.94) .. (203.21,158.94) -- cycle ;
+
+
+%Lines (Straight and Diagonal in horizontal shaded area)  
+\draw (162.17,151.02) -- (217.5,165.75) ;
+\draw (188.63,119.3) -- (190.36,196.98) ;
+\draw (590.88,63.95) -- (592.6,141.63) ;
+\draw (564.07,95.42) -- (619.4,110.15) ;
+\draw (363.8,237.73) -- (378.87,237.73) ;
+\draw (529.2,236.93) -- (544.27,236.93) ;
+
+%red light beam
+\draw [color={rgb, 255:red, 249; green, 0; blue, 0 }  ,draw opacity=1 ]   (56.5,177) -- (189.5,158.14) ;
+\draw [color={rgb, 255:red, 254; green, 0; blue, 0 }  ,draw opacity=1 ]   (219,155) -- (591.74,102.79) ;
+
+
+%Arrow Lines
+\draw[stealth-stealth]    (87.43,153.27) -- (133.07,186.48) ;
+\draw[stealth-stealth]    (87.95,186.27) -- (133.05,154.48) ;
+\draw[stealth-stealth]    (77,170.27) -- (142.5,170.73) ;
+\draw[stealth-stealth]    (111.32,192.48) -- (110.68,147.8) ;
+\draw[stealth-stealth]    (261.07,171.59) -- (260.43,126.91) ;
+\draw[stealth-stealth]    (293.2,157.15) -- (338.3,125.35) ;
+\draw[stealth-stealth]    (338,133.52) -- (403.5,133.98) ;
+\draw[stealth-stealth]    (426.07,147.59) -- (425.43,102.91) ;
+\draw[stealth-stealth]    (458.43,101.64) -- (504.07,134.86) ;
+\draw[stealth-stealth]    (503.5,110.52) -- (569,110.98) ;
+
+%Shape: Cyclinder 
+\draw  [draw opacity=0][shading=_hq6urdyis,_8gpr4bzch] (16.9,174.96) -- (54.39,169.9) .. controls (55.01,169.82) and (55.97,173.06) .. (56.52,177.15) .. controls (57.07,181.23) and (57.01,184.62) .. (56.39,184.7) -- (18.9,189.76) .. controls (18.27,189.85) and (17.32,186.6) .. (16.77,182.52) .. controls (16.21,178.43) and (16.27,175.05) .. (16.9,174.96) .. controls (17.52,174.88) and (18.48,178.12) .. (19.03,182.21) .. controls (19.58,186.3) and (19.52,189.68) .. (18.9,189.76) ;
+
+%Shape: Circle 1 
+\draw  [draw opacity=0][shading=_gvnjwi6oa,_e86rb5m74] (97.25,170.25) .. controls (97.25,162.79) and (103.29,156.75) .. (110.75,156.75) .. controls (118.21,156.75) and (124.25,162.79) .. (124.25,170.25) .. controls (124.25,177.71) and (118.21,183.75) .. (110.75,183.75) .. controls (103.29,183.75) and (97.25,177.71) .. (97.25,170.25) -- cycle ;
+%Shape: Circle 2
+\draw  [draw opacity=0][shading=_gvnjwi6oa,_e86rb5m74] (247.25,149.25) .. controls (247.25,141.79) and (253.29,135.75) .. (260.75,135.75) .. controls (268.21,135.75) and (274.25,141.79) .. (274.25,149.25) .. controls (274.25,156.71) and (268.21,162.75) .. (260.75,162.75) .. controls (253.29,162.75) and (247.25,156.71) .. (247.25,149.25) -- cycle ;
+%Shape: Circle 3
+\draw  [draw opacity=0][shading=_gvnjwi6oa,_e86rb5m74] (302.25,141.25) .. controls (302.25,133.79) and (308.29,127.75) .. (315.75,127.75) .. controls (323.21,127.75) and (329.25,133.79) .. (329.25,141.25) .. controls (329.25,148.71) and (323.21,154.75) .. (315.75,154.75) .. controls (308.29,154.75) and (302.25,148.71) .. (302.25,141.25) -- cycle ;
+%Shape: Circle 4 
+\draw  [draw opacity=0][shading=_gvnjwi6oa,_e86rb5m74] (357.25,133.75) .. controls (357.25,126.29) and (363.29,120.25) .. (370.75,120.25) .. controls (378.21,120.25) and (384.25,126.29) .. (384.25,133.75) .. controls (384.25,141.21) and (378.21,147.25) .. (370.75,147.25) .. controls (363.29,147.25) and (357.25,141.21) .. (357.25,133.75) -- cycle ;
+%Shape: Circle 5
+\draw  [draw opacity=0][shading=_gvnjwi6oa,_e86rb5m74] (412.25,125.25) .. controls (412.25,117.79) and (418.29,111.75) .. (425.75,111.75) .. controls (433.21,111.75) and (439.25,117.79) .. (439.25,125.25) .. controls (439.25,132.71) and (433.21,138.75) .. (425.75,138.75) .. controls (418.29,138.75) and (412.25,132.71) .. (412.25,125.25) -- cycle ;
+%Shape: Circle 6 
+\draw  [draw opacity=0][shading=_gvnjwi6oa,_e86rb5m74] (522.75,110.75) .. controls (522.75,103.29) and (528.79,97.25) .. (536.25,97.25) .. controls (543.71,97.25) and (549.75,103.29) .. (549.75,110.75) .. controls (549.75,118.21) and (543.71,124.25) .. (536.25,124.25) .. controls (528.79,124.25) and (522.75,118.21) .. (522.75,110.75) -- cycle ;
+%Shape: Circle 7 
+\draw  [draw opacity=0][shading=_gvnjwi6oa,_e86rb5m74] (467.75,118.25) .. controls (467.75,110.79) and (473.79,104.75) .. (481.25,104.75) .. controls (488.71,104.75) and (494.75,110.79) .. (494.75,118.25) .. controls (494.75,125.71) and (488.71,131.75) .. (481.25,131.75) .. controls (473.79,131.75) and (467.75,125.71) .. (467.75,118.25) -- cycle ;
+
+
+%Shape: Rectangle horizontal 1 
+\draw  [draw opacity=0][shading=_j5wwo2xxj,_hvd5allw0,path fading= _wnfumyj78 ,fading transform={xshift=2}] (110.33,210.33) -- (556.2,210.33) -- (556.2,225.27) -- (110.33,225.27) -- cycle ;
+%Shape: Rectangle horizontal 2 
+\draw  [draw opacity=0][shading=_j5wwo2xxj,_hvd5allw0,path fading= _wnfumyj78 ,fading transform={xshift=2}] (110.33,229.6) -- (555.53,229.6) -- (555.53,244.53) -- (110.33,244.53) -- cycle ;
+%Shape: Rectangle horizontal 3 
+\draw  [draw opacity=0][shading=_j5wwo2xxj,_hvd5allw0,path fading= _wnfumyj78 ,fading transform={xshift=2}] (110.33,249.27) -- (556.2,249.27) -- (556.2,264.2) -- (110.33,264.2) -- cycle ;
+%Shape: Rectangle horizontal 4 
+\draw  [draw opacity=0][shading=_j5wwo2xxj,_hvd5allw0,path fading= _wnfumyj78 ,fading transform={xshift=2}] (110.33,268.27) -- (556.2,268.27) -- (556.2,283.2) -- (110.33,283.2) -- cycle ;
+%Shape: Rectangle horizontal 5 
+\draw  [draw opacity=0][shading=_j5wwo2xxj,_hvd5allw0,path fading= _wnfumyj78 ,fading transform={xshift=2}] (110.33,288.2) -- (556.2,288.2) -- (556.2,303.13) -- (110.33,303.13) -- cycle ;
+
+
+
+%Image Eve 
+\draw (401.5,54.17) node  {\includegraphics[width=38.75pt,height=38.75pt]{pic1.png}};
+%Image Alice 
+\draw (104.83,102.17) node  {\includegraphics[width=40.75pt,height=40.75pt]{pic3.png}};
+%Image Bob 
+\draw (600,172.86) node  {\includegraphics[width=35.51pt,height=35.51pt]{pic2.png}};
+
+
+
+% Text Node
+\draw (261.37,295.47) node  [font=\footnotesize] [align=left] {\textbf{1}};
+% Text Node
+\draw (261.37,218.53) node  [font=\footnotesize] [align=left] {\textbf{1}};
+% Text Node
+\draw (316.03,218.13) node  [font=\footnotesize] [align=left] {\textbf{1}};
+% Text Node
+\draw (426.17,218.13) node  [font=\footnotesize] [align=left] {\textbf{1}};
+% Text Node
+\draw (426.17,295.47) node  [font=\footnotesize] [align=left] {\textbf{1}};
+% Text Node
+\draw (316.03,276.13) node  [font=\footnotesize] [align=left] {\textbf{N}};
+% Text Node
+\draw (370.1,276.13) node  [font=\footnotesize] [align=left] {\textbf{N}};
+% Text Node
+\draw (534.97,276.13) node  [font=\footnotesize] [align=left] {\textbf{N}};
+% Text Node
+\draw (261.37,275.13) node  [font=\footnotesize] [align=left] {\textbf{Y}};
+% Text Node
+\draw (426.17,276.13) node  [font=\footnotesize] [align=left] {\textbf{Y}};
+% Text Node
+\draw (481.23,276.13) node  [font=\footnotesize] [align=left] {\textbf{Y}};
+% Text Node
+\draw (370.1,218.13) node  [font=\footnotesize] [align=left] {\textbf{0}};
+% Text Node
+\draw (481.23,218.13) node  [font=\footnotesize] [align=left] {\textbf{0}};
+% Text Node
+\draw (534.97,218.27) node  [font=\footnotesize] [align=left] {\textbf{0}};
+% Text Node
+\draw (481.23,295.47) node  [font=\footnotesize] [align=left] {\textbf{0}};
+% Text Node
+\draw (263.37,237.87) node  [font=\footnotesize] [align=left] {\textbf{\textbar}};
+% Text Node
+\draw (263.37,255.8) node  [font=\footnotesize] [align=left] {\textbf{\textbar}};
+% Text Node
+\draw (373.1,256.8) node  [font=\footnotesize] [align=left] {\textbf{\textbar}};
+% Text Node
+\draw (427.17,237.47) node  [font=\footnotesize] [align=left] {\textbf{\textbar}};
+% Text Node
+\draw (427.17,256.8) node  [font=\footnotesize] [align=left] {\textbf{\textbar}};
+% Text Node
+\draw (316.03,295.47) node  [font=\footnotesize] [align=left] {\textbf{--}};
+% Text Node
+\draw (370.1,295.47) node  [font=\footnotesize] [align=left] {\textbf{--}};
+% Text Node
+\draw (534.97,295.47) node  [font=\footnotesize] [align=left] {\textbf{--}};
+% Text Node
+\draw (318.03,255.8) node  [font=\footnotesize,rotate=-322.94] [align=left] {\textbf{\textbackslash }};
+% Text Node
+\draw (483.23,255.8) node  [font=\footnotesize,rotate=-322.94] [align=left] {\textbf{\textbackslash }};
+% Text Node
+\draw (318.03,238.47) node  [rotate=-31.84] [align=left] {\textbf{/}};
+% Text Node
+\draw (535.97,257.8) node  [rotate=-31.84] [align=left] {\textbf{/}};
+% Text Node
+\draw (484.23,235.47) node  [font=\footnotesize,rotate=-322.94] [align=left] {\textbf{\textbackslash }};
+% Text Node
+\draw (604.27,284.6) node  [font=\small] [align=left] {\textbf{0 = --- or \textbackslash }};
+% Text Node
+\draw (604.27,299.93) node  [font=\small] [align=left] {\textbf{1 = \textbar ~  or /}};
+% Text Node
+\draw (238.13,294.73) node [anchor=east] [inner sep=0.75pt]   [align=left] {\textbf{{\footnotesize Keys:}}};
+% Text Node
+\draw (238.13,275.73) node [anchor=east] [inner sep=0.75pt]   [align=left] {\textbf{{\footnotesize Photon Received:}}};
+% Text Node
+\draw (238.13,256.73) node [anchor=east] [inner sep=0.75pt]   [align=left] {\textbf{{\footnotesize Bob's Polarization:}}};
+% Text Node
+\draw (238.13,237.73) node [anchor=east] [inner sep=0.75pt]   [align=left] {\textbf{{\footnotesize Alice's Polarization:}}};
+% Text Node
+\draw (238.13,218.73) node [anchor=east] [inner sep=0.75pt]   [align=left] {\textbf{{\footnotesize Bit value:}}};
+% Text Node
+\draw (103.78,127.33) node [anchor=north] [inner sep=0.75pt]  [font=\footnotesize] [align=left] {\textbf{Alice's Polarization}};
+% Text Node
+\draw (399.78,77.33) node [anchor=north] [inner sep=0.75pt]  [font=\footnotesize] [align=left] {\textbf{Eve}};
+% Text Node
+\draw (601.78,197.33) node [anchor=north] [inner sep=0.75pt]  [font=\footnotesize] [align=left] {\textbf{Bob's Polaroid}};
+
+\end{tikzpicture}
+
+\end{center}
+
+% This version of the BB84 protocol is dapted from Aliberti and Bruen by Malik @hadimalik1 on Fiverr. See Aliberti, Keith and Thomas Bruen (2006). “Quantum Computation and Communication.” Army Logistician 38.5, pp. 42–48.
+\end{document}
+
