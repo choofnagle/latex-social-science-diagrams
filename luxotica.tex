@@ -1,0 +1,95 @@
+\documentclass[border=2mm]{standalone}
+% \usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{tikz,graphicx}
+\usetikzlibrary{positioning,matrix,calc,arrows}
+
+\usepackage{pgfmath}
+\pgfmathsetseed{\number\pdfrandomseed}
+
+
+\begin{document}
+\thispagestyle{empty}
+% \begin{center}
+\tikz[font=\footnotesize]{
+% Define style
+\tikzstyle{block}=[draw,outer sep=0pt, inner sep=0pt, minimum width=4.2cm, inner ysep=3mm, align=center, rounded corners=1mm]
+\tikzstyle{block3}=[draw,outer sep=0pt, inner sep=0pt, minimum width=5cm, inner ysep=3mm, align=center, rounded corners=1mm]
+\tikzstyle{block0}=[draw,outer sep=0pt, inner sep=0pt, minimum width=4cm, inner ysep=3mm, align=center, rounded corners=1mm]
+
+\node[block] (a) {\textbf{Litigation Commences}};
+\node[block, below=7mm of a, label={above:August 25, 2016}] (b) {Luxottica Files Motion in\\Northem District of Illinois};
+\node[block, below=10mm of b, label={above:September 1, 2016}] (c) {Court Grants Sealed TRO};
+\node[block, below=10mm of c, label={above:}] (d) {Luxottica obtains electronic\\service (Fed, R. Civ, P.\\ 4(3), 3). Luxottica then gives\\ summons by e-mail and web\\ publication to more than 400\\defendants};
+\node[block, below=10mm of d, label={above:September 21, 2016}] (e) {Court grants preliminary\\injunction, in effect extending\\TRO interventions};
+\node[block, below=10mm of e, label={above:October 20, 2016}] (f) {Luxottica Files for Default\\Judgment for all defendants};
+\node[block, below=10mm of f, label={above:October 25, 2016}] (g) {Court signs final judgment\\order};
+
+%----------------
+\node[block0, anchor=south east, xshift=-1cm] (a0) at (b.south west) {\textbf{Pre-Litigation}\\
+Luxottica Investigates\\
+Instances of Trademark\\
+Infringement,Compiles \\list of infringing Domains};
+
+\node[block0, below=2mm of a0] (b0) {PayPal locates all\\Defendants' accounts\\funds, and restrains any\\transfer or disposition\\of money};
+\node[block0, anchor=south east, xshift=-1cm] (c0) at(d.south west) {Third Party Providers\\
+(Google, GoDaddy,\\
+(Bay ctc.) Provide\\
+Expedited Discovery};
+\node[block0, anchor=south east, xshift=-1cm] (e0) at(g.south west) {Domain Names permanently\\transferred to Luxottica};
+\node[block0, anchor=south east, xshift=-1cm] (d0) at(f.south west) {Third Party Providers\\Ordered to Stop Providing\\
+Services,Advertising, or\\Displaying Links\\for Defendants};
+
+%---------------
+\node[block3, anchor=south west, xshift=1.5cm] (f1) at(g.south east) {Domain Names permanently\\transferred to Luxottica};
+\node[block3, anchor=south west, xshift=1.5cm] (e1) at(f.south east) {Luxottica Awarded $\$ 200,000$\\ in damages from EACH\\
+Defendant; Paypal and\\ other banks ordered to\\release funds to Luxottica};
+\node[block3, anchor=south west, xshift=1.5cm] (a1) at(c.south east) {Defendants enjoined from\\further infringement};
+\node[block3, below=2mm of a1] (b1) {Defendants' Domain};
+\node[block3, anchor=north west,yshift=-1cm, minimum width=2.4cm,font=\scriptsize] (c1) at (b1.south west) {Domain Name\\
+Registries\\
+Nerisign,\\
+Neustar, etc.)\\
+either unlock and\\
+change registrar\\
+of record or\\
+disable domain\\
+names};
+\node[block3, anchor=north east,yshift=-1cm, minimum width=2.4cm,font=\scriptsize] (d1) at (b1.south east) {Domain Name\\
+Registries\\
+Nerisign,\\
+Neustar, etc.)\\
+either unlock and\\
+change registrar\\
+of record or\\
+disable domain\\
+names};
+
+% Arrows
+\draw[triangle 45-] (b)--(b-|a0.east);
+\draw[] (c)--node[above]{\tiny 2 days} (c-|b0.east);
+\draw[] (c0.east)--++(0.5,0)--node[fill=white,sloped]{5 days} ++(0,2)-|(c.-150);
+\draw[] (d0.east)--++(0.5,0)--node[fill=white,sloped]{3 days} ++(0,-1.5)-|(g.162);
+\draw[] (e0)--node[above]{\tiny 3 days} (g);
+\draw[] (e0)--node[above]{\tiny 3 days} (g);
+
+\draw[] (g)--node[above]{\tiny Immediately} (f1);
+\draw[] (e1.163)--++(-0.5,0)--node[fill=white,sloped]{Immediately} ++(0,-2.3)-|(g.18);
+\draw[] (c.east)--node[above]{\tiny Immediately} (c.east-|a1.west);
+\draw[] (c.-5)--++(0.5,0) |- node[pos=.2,fill=white,sloped, above]{\tiny 3 days} (b1.west);
+
+\draw (b1.-100)--++(0,-.5)-|(c1.north);
+\draw (b1.-80)--++(0,-.5)-|(d1.north);
+
+\draw[-triangle 45] (b)--($(c.north)+(0,4mm)$);
+\draw[-triangle 45] (c)--($(d.north)+(0,0mm)$);
+\draw[-triangle 45] (d)--($(e.north)+(0,4mm)$);
+\draw[-triangle 45] (e)--($(f.north)+(0,4mm)$);
+\draw[-triangle 45] (f)--($(g.north)+(0,4mm)$);
+} 
+% \end{center}
+
+%This is adapted from Aniket Kesari, Chris Hoofnagle and Damon McCoy, Deterring Cybercrime in Berkeley Technology Law Journal Vol. 32, No. 3 (2017), pp. 1093-1134 by Khalil Mokhtari. Mokhtari serves as a research member and associate professor at the University of Khenchela, Algeria. He obtained his Ph.D. through the PROFAS B+ program, conducting research at the Laboratory of Systems Engineering of Versailles (LISV), University of Versailles UVSQ, France. His expertise lies in Applied Mathematics and Control Systems Engineering, with a focus on adaptive control, passivity, and positivity characterizations of control systems.
+
+
+\end{document}
+
