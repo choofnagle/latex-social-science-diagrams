@@ -9,6 +9,14 @@ Are you a social scientist who wants to write in LaTeX? This repository has figu
 
 ![Diana v1](dianav1.png)
 
+V1's code generates both the key and the table programatically. The key changes each time the file is compiled.
+
+## The NSA DIANA Cipher v2 (by Malik)
+
+![Diana v2](dianav2.png) 
+
+V2 uses the key originally published by the government.
+
 ## John Boyd's OODA Loop (by Khalil)
 
 ![Boyd's OODA Loop v1](boydoodav1.png) 
