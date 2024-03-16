@@ -3,15 +3,15 @@ Are you a social scientist who wants to write in LaTeX? This repository has figu
 
 ## The NSA DIANA Cipher v1 (by Khalil)
 
-![Diana v1](dianav1.png)
+![Diana v1](/Users/choofnagle/Documents/GitHub/latex-social-science-diagrams/DIANA one time pad v1/dianav1.png)
 
 ## John Boyd's OODA Loop (by Khalil)
 
-![Boyd's OODA Loop v1](boydoodav1.png) 
+![Boyd's OODA Loop v1](/Users/choofnagle/Documents/GitHub/latex-social-science-diagrams/boyd ooda loop version 1/boydoodav1.png) 
 
 ## John Boyd's OODA Loop (by Malik)
 
-![Boyd's OODA Loop v2](boydoodav2.png) 
+![Boyd's OODA Loop v2](/Users/choofnagle/Documents/GitHub/latex-social-science-diagrams/boyd ooda loop version 2/boydoodav2.png) 
 
 ## Computer Network Vulnerabilities (by Khalil)
 
