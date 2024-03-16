@@ -1,0 +1,118 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\def\MarkRightAngle[size=#1](#2,#3,#4){
+  \draw[] ($(#3)!#1!(#2)$) -- ($($(#3)!#1!(#2)$)!#1!90:(#2)$) -- ($(#3)!#1!(#4)$)
+}
+
+\usetikzlibrary{patterns}
+\usetikzlibrary{angles,quotes}
+\usepackage{parskip}
+\usetikzlibrary{intersections, pgfplots.fillbetween}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{multirow}
+
+
+\begin{document}
+
+
+%Right side table
+\begin{figure}
+
+
+\begin{tabular}{p{3in}l}
+     & {\scriptsize\begin{tabular}{|cl|}\hline
+     \multirow{2}{*}{A} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & Z Y X W V U T S R Q P O N M L K J I H G F E D C B A\\\hline
+     \multirow{2}{*}{B} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & Y X W V U T S R Q P O N M L K J I H G F E D C B A Z\\\hline
+     \multirow{2}{*}{C} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & X W V U T S R Q P O N M L K J I H G F E D C B A Z Y \\\hline
+     \multirow{2}{*}{D} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & W V U T S R Q P O N M L K J I H G F E D C B A Z Y X\\\hline
+     \multirow{2}{*}{E} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & V U T S R Q P O N M L K J I H G F E D C B A Z Y X W\\\hline
+     \multirow{2}{*}{F} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & U T S R Q P O N M L K J I H G F E D C B A Z Y X W V\\\hline
+     \multirow{2}{*}{G} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & T S R Q P O N M L K J I H G F E D C B A Z Y X W V U\\\hline
+     \multirow{2}{*}{H} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & S R Q P O N M L K J I H G F E D C B A Z Y X W V U T\\\hline
+     \multirow{2}{*}{I} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & R Q P O N M L K J I H G F E D C B A Z Y X W V U T S\\\hline
+     \multirow{2}{*}{J} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & Q P O N M L K J I H G F E D C B A Z Y X W V U T S R\\\hline
+     \multirow{2}{*}{K} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & P O N M L K J I H G F E D C B A Z Y X W V U T S R Q\\\hline
+     \multirow{2}{*}{L} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & O N M L K J I H G F E D C B A Z Y X W V U T S R Q P\\\hline
+     \multirow{2}{*}{M} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & N M L K J I H G F E D C B A Z Y X W V U T S R Q P O\\\hline
+     \multirow{2}{*}{N} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & M L K J I H G F E D C B A Z Y X W V U T S R Q P O N\\\hline
+     \multirow{2}{*}{O} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & L K J I H G F E D C B A Z Y X W V U T S R Q P O N M\\\hline
+     \multirow{2}{*}{P} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & K J I H G F E D C B A Z Y X W V U T S R Q P O N M L\\\hline
+     \multirow{2}{*}{Q} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & J I H G F E D C B A Z Y X W V U T S R Q P O N M L K\\\hline
+     \multirow{2}{*}{R} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & I H G F E D C B A Z Y X W V U T S R Q P O N M L K J\\\hline
+     \multirow{2}{*}{S} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & H G F E D C B A Z Y X W V U T S R Q P O N M L K J I\\\hline
+     \multirow{2}{*}{T} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & G F E D C B A Z Y X W V U T S R Q P O N M L K J I H\\\hline
+     \multirow{2}{*}{U} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & F E D C B A Z Y X W V U T S R Q P O N M L K J I H G\\\hline
+     \multirow{2}{*}{V} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & E D C B A Z Y X W V U T S R Q P O N M L K J I H G F\\\hline
+     \multirow{2}{*}{W} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & D C B A Z Y X W V U T S R Q P O N M L K J I H G F E\\\hline
+     \multirow{2}{*}{X} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & C B A Z Y X W V U T S R Q P O N M L K J I H G F E D\\\hline
+     \multirow{2}{*}{Y} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & B A Z Y X W V U T S R Q P O N M L K J I H G F E D C\\\hline
+     \multirow{2}{*}{Z} & A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  \\
+     & A Z Y X W V U T S R Q P O N M L K J I H G F E D C B\\\hline
+\end{tabular} }
+\end{tabular}
+
+%Left side table
+
+\begin{tikzpicture}[overlay]
+    \draw[dashed] (-0.5,15) -- (7.5,15);
+    \draw (3.5,14) node [font=\scriptsize] {L F H N Y\quad Z A H S B\quad J R N X K\quad B Y N F V\quad K O Z A T};
+    \draw (3.5,13.15) node [font=\scriptsize] {V R Z T H\quad J P C S U\quad R U S Y Q\quad J V X M N\quad V L O E L};
+    \draw (3.5,12.35) node [font=\scriptsize] {P O D Y V\quad J J L V J\quad X F S M L\quad H P L G A\quad Z X V Z Y};
+    \draw (3.5,11.5) node [font=\scriptsize] {T S U I O\quad X B M K J\quad M D S H D\quad N P M P I\quad O Z V O Z};
+    \draw (3.5,10.75) node [font=\scriptsize] {E Y J V F\quad O B X K R\quad P M T X Y\quad Y T K G K\quad A T O P E};
+    \draw (3.5,10) node [font=\scriptsize] {N M C J K\quad F P N S V\quad S M Z Z N\quad Q Q Z Y N\quad C Y S D E};
+    \draw (3.5,9.45) node [font=\scriptsize] {Y I I U J\quad T U R R Z\quad Q M R D E\quad Y O V R J\quad M O C G Y};
+    \draw (3.5,8.85) node [font=\scriptsize] {H A L O K\quad N M I I N\quad C A I D Y\quad R D T K H\quad Z D Z M P};
+    \draw (3.5,8.25) node [font=\scriptsize] {O I N D S\quad C M O F E\quad X G B V J\quad C A Y S O\quad I S B M U};
+    \draw (3.5,7.55) node [font=\scriptsize] {K I S Z X\quad O Z J I M\quad D B R C Y\quad B N B V Z\quad L F B X T};
+    \draw (3.5,6.85) node [font=\scriptsize] {R J C T I\quad N W I F H\quad I M N S F\quad R U V V C\quad U I T R N};
+    \draw (3.5,6.0) node [font=\scriptsize] {N Q Q N Q\quad Z U B Z B\quad E P V J X\quad N C Z X Y\quad F B T E X};
+    \draw (3.5,5.25) node [font=\scriptsize] {V E I O E\quad M D V T N\quad G S S N G\quad L R Z V G\quad U K U Q X};
+    \draw (3.5,4.35) node [font=\scriptsize] {P Q F R I\quad Q C F A A\quad N L T K E\quad D X M D A\quad Q A I M U};
+    \draw (3.5,3.55) node [font=\scriptsize] {M E I M Q\quad L Q T W P\quad M V B N X\quad M N U U K\quad A C P X A};
+    \draw (3.5,2.8) node [font=\scriptsize] {A Y G F S\quad Z N F D U\quad S Y M V X\quad I Y I P O\quad R J C E K};
+    \draw (3.5,2.05) node [font=\scriptsize] {P E D P Q\quad J F V I O\quad M Y L I X\quad G V T N C\quad Q Q X X H};
+    
+    \draw (3.5,1.35) node [font=\scriptsize] {F S G N A\quad U D T L B\quad U N K A H\quad H A R M G\quad T Z Y X H};
+    
+    \draw (3.5,0.5) node [font=\scriptsize] {U G B O A\quad J X M F Y\quad H T U N M\quad W C T X M\quad Q F L S Y};
+\end{tikzpicture}
+
+\caption{This table from the NSA’s DIANA program illustrates how one-time pads produce messages with keys the same length of ciphertext. The key is on the left- hand side. The right-hand side is the table used to convert plain text to ciphertext (and vice versa). This key starts with the letter “L,” so the user encrypting a message would use the L row on the table to choose the first letter of ciphertext. Assume that Alice wants to say “The Magic Words Are Squeamish Ossifrage” to Bob. To encrypt, Alice notes the first letter from the key, left-hand pane, which is L. Turning to the table, row L, and then to the letter T, the corresponding ciphertext underneath the T is a V. To encrypt the next letter, Alice would then use F from the key to locate the letter H and choose the ciphertext N, and so on. Alice and Bob must have identical cards and must destroy them after the process. This version of the DIANA cipher appeared in Hoofnagle \& Garfinkel, \textsc{The Quantum Age}, Cambridge University Press 2022, and was adapted to Latex by Malik @hadimalik1 on Fiverr}
+\end{figure}
+
+\end{document}
+
